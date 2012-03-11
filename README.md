@@ -1,11 +1,9 @@
 Facebook SDK Grails Plugin
 ================================
 
-# Introduction
-
 Demo app for [Facebook SDK Grails plugin](https://github.com/benorama/facebook-sdk-grails-plugin)
 
-# Getting started
+## Getting started
 
 **1- Download or clone the [plugin GitHub project](https://github.com/benorama/facebook-sdk-grails-demo).**
 
