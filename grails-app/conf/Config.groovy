@@ -112,6 +112,6 @@ grails.resources.modules = {
 grails.plugins.fboostrapp.fixtaglib = true
 
 // Facebook sdk plugin
-//grails.plugins.facebooksdk.appId = {YOUR_APP_ID}
-//grails.plugins.facebooksdk.appPermissions = {YOUR_APP_PERMISSIONS}
-//grails.plugins.facebooksdk.appSecret = {YOUR_APP_SECRET}
+grails.plugins.facebooksdk.appId = 0
+grails.plugins.facebooksdk.appPermissions = "email"
+grails.plugins.facebooksdk.appSecret = ""

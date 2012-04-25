@@ -37,5 +37,5 @@ grails run-app
 
 Browse to :
 
-* <http://localhost:8080/facebook-sdk-grails-demo/website/> for the website example
+* <http://localhost:8080/facebook-sdk-demo/website/> for the website example
 * <http://apps.facebook.com/my-app-name-space> for the app example on Facebook
