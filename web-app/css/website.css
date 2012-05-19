@@ -47,3 +47,12 @@ body {
 .topbar .btn {
 	border: 0;
 }
+ul.authentication li {
+    clear: both;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+ul.authentication li .btn {
+    margin-bottom: 5px;
+    margin-left: 10px;
+}

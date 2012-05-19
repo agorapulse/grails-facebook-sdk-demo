@@ -17,26 +17,32 @@
 			
 			<h2 class="tab">Authentication</h2>
 			<g:if test="${facebook.authenticated}">
-				<p>
-					Log out via Facebook JavaScript SDK: <facebook:logoutLink elementClass="btn" nextUrl="${createLink(action:'logout')}">Logout</facebook:logoutLink>
-				</p>
-				<p>
-					Log out Facebook.com server side redirect:
-					<a href="${logoutUrl}" class="btn">
-						Logout
-					</a>
-				</p>
+				<ul class="authentication">
+                    <li>
+                        <facebook:logoutLink elementClass="btn pull-right" nextUrl="${createLink(action:'logout')}">Logout</facebook:logoutLink>
+                        Log out via Facebook JavaScript SDK:
+                    </li>
+                    <li>
+                        <a href="${logoutUrl}" class="btn pull-right">
+                            Logout
+                        </a>
+                        Log out Facebook.com server side redirect:
+                    </li>
+                </ul>
 			</g:if>
 			<g:else>
-				<p>
-					Log in via Facebook JavaScript SDK: <facebook:loginLink appPermissions="${facebook.app.permissions}" elementClass="large primary btn">Login</facebook:loginLink><br />
-					(<i>with Facebook Grails SDK handling authorization code from cookie on reload</i>)
-				</p>
-				<p>
-					Log in via Facebook.com server side redirect:
-					<a href="${loginUrl}" class="large btn">Login</a><br />
-					(<i>with Facebook Grails SDK handling authorization code from url on return</i>)
-				</p>
+				<ul class="authentication">
+                    <li>
+                        <facebook:loginLink appPermissions="${facebook.app.permissions}" elementClass="large primary btn pull-right">Login</facebook:loginLink>
+                        Log in via Facebook JavaScript SDK:<br />
+                        (<i>with Facebook Grails SDK handling authorization code from cookie on reload</i>)
+                    </li>
+                    <li>
+                        <a href="${loginUrl}" class="pull-right large btn">Login</a>
+                        Log in via Facebook.com server side redirect:<br />
+                        (<i>with Facebook Grails SDK handling authorization code from url on return</i>)
+                    </li>
+                </ul>
 			</g:else>
 			<p>&nbsp;</p>
 			<g:if test="${user}">
