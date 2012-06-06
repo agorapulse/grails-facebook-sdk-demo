@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Facebook SDK Grails Demo by benorama</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Facebook SDK Grails Demo</h1>
+        <p>Demo app for Facebook SDK Grails Plugin</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/benorama/facebook-sdk-grails-demo" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/benorama/facebook-sdk-grails-demo/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/benorama/facebook-sdk-grails-demo/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>Facebook SDK Grails Demo</h1>
+
+<p>Demo app for <a href="https://github.com/benorama/facebook-sdk-grails-plugin">Facebook SDK Grails plugin</a>.</p>
+
+<h2>Getting started</h2>
+
+<p><strong>1- Download or clone the <a href="https://github.com/benorama/facebook-sdk-grails-demo">plugin GitHub project</a>.</strong></p>
+
+<div class="highlight">
+<pre><span class="n">git</span> <span class="n">clone</span> <span class="nl">https:</span><span class="c1">//benorama@github.com/benorama/facebook-sdk-grails-demo.git</span>
+</pre>
+</div>
+
+
+<p><strong>2- Create a Facebook app on <a href="https://developers.facebook.com/apps">Facebook Developers</a>, in order to get your own app ID and app secret.</strong></p>
+
+<p>Configure your Facebook app as below:</p>
+
+<ul>
+<li>
+<em>App name space</em> = my-app-name-space</li>
+<li>
+<em>App domain</em> = localhost</li>
+<li>
+<em>Website URL</em> = http://localhost:8080/facebook-sdk-demo/website/</li>
+<li>
+<em>App on Facebook</em> = http://localhost:8080/facebook-sdk-demo/app/</li>
+<li>
+<em>sandbox mode</em> = enabled (in Advanced setting, to be able to use the app on Facebook without SSL certificate)</li>
+</ul><p><strong>3- Add your Facebook app parameters to <em>grails-app/conf/Config.groovy</em>.</strong></p>
+
+<div class="highlight">
+<pre><span class="n">grails</span><span class="o">.</span><span class="na">plugins</span><span class="o">.</span><span class="na">facebooksdk</span><span class="o">.</span><span class="na">appId</span> <span class="o">=</span> <span class="o">{</span><span class="n">APP_ID</span><span class="o">}</span>
+<span class="n">grails</span><span class="o">.</span><span class="na">plugins</span><span class="o">.</span><span class="na">facebooksdk</span><span class="o">.</span><span class="na">appPermissions</span> <span class="o">=</span> <span class="o">{</span><span class="n">APP_PERMISSIONS</span><span class="o">}</span>
+<span class="n">grails</span><span class="o">.</span><span class="na">plugins</span><span class="o">.</span><span class="na">facebooksdk</span><span class="o">.</span><span class="na">appSecret</span> <span class="o">=</span> <span class="o">{</span><span class="n">APP_SECRET</span><span class="o">}</span>
+</pre>
+</div>
+
+
+<p><strong>4-Run the app from the project root.</strong> </p>
+
+<div class="highlight">
+<pre><span class="n">grails</span> <span class="n">run</span><span class="o">-</span><span class="n">app</span>
+</pre>
+</div>
+
+
+<p>Browse to :</p>
+
+<ul>
+<li>
+<a href="http://localhost:8080/facebook-sdk-demo/website/">http://localhost:8080/facebook-sdk-demo/website/</a> for the website example</li>
+<li>
+<a href="http://apps.facebook.com/my-app-name-space">http://apps.facebook.com/my-app-name-space</a> for the app example on Facebook</li>
+</ul>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/benorama">benorama</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>
