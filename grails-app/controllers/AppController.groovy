@@ -1,5 +1,5 @@
 import com.restfb.exception.FacebookOAuthException
-import grails.plugins.facebooksdk.FacebookGraphClient
+import grails.plugin.facebooksdk.FacebookGraphClient
 
 class AppController {
 	
