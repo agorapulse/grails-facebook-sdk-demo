@@ -9,9 +9,9 @@
 	<p>
 		2. Add your Facebook app settings in <i>grails-app/conf/Config.groovy</i>:<br />
 		<ul>
-			<li>grails.plugins.facebooksdk.appId = {APP_ID}</li>
-			<li>grails.plugins.facebooksdk.appPermissions = {APP_PERMISSIONS}</li>
-			<li>grails.plugins.facebooksdk.appSecret = {APP_SECRET}</li>
+			<li>grails.plugin.facebooksdk.appId = {APP_ID}</li>
+			<li>grails.plugin.facebooksdk.appPermissions = {APP_PERMISSIONS}</li>
+			<li>grails.plugin.facebooksdk.appSecret = {APP_SECRET}</li>
 		</ul>
 	</p>
 </div>
