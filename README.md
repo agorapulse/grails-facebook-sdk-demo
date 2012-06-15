@@ -1,14 +1,14 @@
-Facebook SDK Grails Demo
-================================
+Grails Facebook SDK - Demo
+==========================
 
-Demo app for [Facebook SDK Grails plugin](https://github.com/benorama/facebook-sdk-grails-plugin).
+Demo app for [Grails Facebook SDK plugin](https://github.com/benorama/grails-facebook-sdk).
 
 ## Getting started
 
-**1- Download or clone the [plugin GitHub project](https://github.com/benorama/facebook-sdk-grails-demo).**
+**1- Download or clone the [plugin GitHub project](https://github.com/benorama/grails-facebook-sdk-demo).**
 
 ```groovy
-git clone https://benorama@github.com/benorama/facebook-sdk-grails-demo.git
+git clone https://benorama@github.com/benorama/grails-facebook-sdk-demo.git
 ```
 
 **2- Create a Facebook app on [Facebook Developers](https://developers.facebook.com/apps), in order to get your own app ID and app secret.**
