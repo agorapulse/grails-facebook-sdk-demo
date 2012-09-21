@@ -3,7 +3,7 @@
 </div>
 <div class="row">
 	<div class="span10">
-		<g:if test="${!facebook.app.id}">
+		<g:if test="${!facebookContext.app.id}">
 			<g:render template="/website/configError" />
 		</g:if>
 		<g:else>
@@ -11,19 +11,19 @@
 			  We use the Facebook JavaScript SDK to provide a richer user experience. For more info,
 			  look here: http://github.com/facebook/facebook-js-sdk
 			-->
-			<facebook:initJS appId="${facebook.app.id}">
+			<facebook:initJS appId="${facebookContext.app.id}">
 				// Put here any JS code to be executed after Facebook JS initialization
 			</facebook:initJS>
 			
 			<h2 class="tab">Authentication</h2>
-			<g:if test="${facebook.authenticated}">
+			<g:if test="${facebookContext.authenticated}">
 				<ul class="authentication">
                     <li>
                         <facebook:logoutLink elementClass="btn pull-right" nextUrl="${createLink(action:'logout')}">Logout</facebook:logoutLink>
                         Log out via Facebook JavaScript SDK:
                     </li>
                     <li>
-                        <a href="${logoutUrl}" class="btn pull-right">
+                        <a href="${facebookContext.getLogoutURL(next:createLink(action:'logout', absolute:true))}" class="btn pull-right">
                             Logout
                         </a>
                         Log out Facebook.com server side redirect:
@@ -33,14 +33,14 @@
 			<g:else>
 				<ul class="authentication">
                     <li>
-                        <facebook:loginLink appPermissions="${facebook.app.permissions}" elementClass="large primary btn pull-right">Login</facebook:loginLink>
+                        <facebook:loginLink appPermissions="${facebookContext.app.permissions.join(',')}" elementClass="large primary btn pull-right">Login</facebook:loginLink>
                         Log in via Facebook JavaScript SDK:<br />
-                        (<i>with Facebook Grails SDK handling authorization code from cookie on reload</i>)
+                        (<i>client-side, with Facebook Grails SDK handling authorization code from cookie on reload</i>)
                     </li>
                     <li>
-                        <a href="${loginUrl}" class="pull-right large btn">Login</a>
+                        <a href="${facebookContext.loginURL}" class="pull-right large btn">Login</a>
                         Log in via Facebook.com server side redirect:<br />
-                        (<i>with Facebook Grails SDK handling authorization code from url on return</i>)
+                        (<i>server-side, with Facebook Grails SDK handling authorization code from url on return</i>)
                     </li>
                 </ul>
 			</g:else>
@@ -49,7 +49,7 @@
 				<h2 class="tab">Your data</h2>
 				<h3>Your profile pic + name</h3>
 				<p>
-					<img src="https://graph.facebook.com/${user.id}/picture">
+					<facebook:picture facebookId="${user.id}" linkEnabled="true" />
 					${user.name}<br />
 				</p>
 				<h3>Your friends</h3>
@@ -67,9 +67,15 @@
 		<h2 class="tab">Public data</h2>
 		<h3>Profile pic + name</h3>
 		<p>
-			<img src="https://graph.facebook.com/benorama/picture">
+            <facebook:picture facebookId="benorama" linkEnabled="true" />
 			${benorama?.name}
 		</p>
+        <p>&nbsp;</p>
+        <h2 class="tab">Facebook Dialogs</h2>
+        <facebook:addToPageLink callBackJS="function(response) {alert(response && response.tabs_added.length + ' app added')}" elementClass="btn">Add to page</facebook:addToPageLink>
+        <facebook:inviteLink callBackJS="function(response) {console.log(response)}" elementClass="btn" message="Check this app!">Invite</facebook:inviteLink>
+        <facebook:publishLink callBackJS="function(response) {if (response && response.success) alert('Published successfully')}" elementClass="btn">Publish</facebook:publishLink>
+        <facebook:sendLink callBackJS="function(response) {if (response && response.success) alert('Sent successfully')}" elementClass="btn" link="http://www.google.com" to="594317994">Send a link to a friend</facebook:sendLink>
 	</div>
 	<div class="span4">
 		<g:render template="links" />

@@ -64,7 +64,6 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
-        // TODO: grails.serverURL = "http://www.changeme.com"
     }
 }
 
@@ -110,6 +109,20 @@ grails.resources.modules = {
 grails.plugins.fboostrapp.fixtaglib = true
 
 // Facebook sdk plugin
-grails.plugin.facebooksdk.appId = 0
-grails.plugin.facebooksdk.appPermissions = "email"
-grails.plugin.facebooksdk.appSecret = ""
+grails.plugin.facebooksdk = {
+    // For single app config
+    app = [
+            id: 0,
+            permissions: ['email'],
+            secret: ''
+    ]
+    // For multiple app config
+    appIdParamName = 'app_id'
+    apps = [
+            [
+                id: 0,
+                permissions: 'email',
+                secret: ''
+            ],
+    ]
+}
