@@ -18,7 +18,7 @@
 			<g:if test="${!facebookContext.authenticated}">
 				<h2 class="tab">Authentication</h2>
 				<p>
-					Install app via Facebook JavaScript SDK: <facebook:loginLink appPermissions="${facebookContext.app.permissions.join(',')}" elementClass="large primary btn">Login</facebook:loginLink>
+					Install app via Facebook JavaScript SDK: <facebook:loginLink appPermissions="${facebookContext.app.permissions}" elementClass="large primary btn">Login</facebook:loginLink>
 				</p>
 			</g:if>
 			<g:else>

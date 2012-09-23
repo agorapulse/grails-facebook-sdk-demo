@@ -33,7 +33,7 @@
 			<g:else>
 				<ul class="authentication">
                     <li>
-                        <facebook:loginLink appPermissions="${facebookContext.app.permissions.join(',')}" elementClass="large primary btn pull-right">Login</facebook:loginLink>
+                        <facebook:loginLink appPermissions="${facebookContext.app.permissions}" elementClass="large primary btn pull-right">Login</facebook:loginLink>
                         Log in via Facebook JavaScript SDK:<br />
                         (<i>client-side, with Facebook Grails SDK handling authorization code from cookie on reload</i>)
                     </li>
