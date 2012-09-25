@@ -9,10 +9,10 @@ class WebsiteController {
     FacebookContext facebookContext
 
 	def beforeInterceptor = {
-        log.info("START ${actionUri} with params=${params}")
+        log.info "START ${actionUri} with params=${params}"
     }
 	def afterInterceptor = {
-        log.info("END ${actionUri}")
+        log.info "END ${actionUri}"
     }
 
 	def index() {
