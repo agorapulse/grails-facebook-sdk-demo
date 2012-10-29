@@ -45,10 +45,15 @@
 		</p>
         <p>&nbsp;</p>
         <h2 class="tab">Facebook Dialogs</h2>
-        <facebook:addToPageLink callBackJS="function(response) {alert(response && response.tabs_added.length + ' app added')}" elementClass="btn">Add to page</facebook:addToPageLink>
-        <facebook:inviteLink callBackJS="function(response) {console.log(response)}" elementClass="btn" message="Check this app!">Invite</facebook:inviteLink>
-        <facebook:publishLink callBackJS="function(response) {if (response && response.success) alert('Published successfully')}" elementClass="btn">Publish</facebook:publishLink>
-        <facebook:sendLink callBackJS="function(response) {if (response && response.success) alert('Sent successfully')}" elementClass="btn" link="http://www.google.com" to="594317994">Send a link to a friend</facebook:sendLink>
-
+        <r:script>
+            function addToPage_callback(response) {alert(response && response.tabs_added.length + ' app added')}
+            function invite_callback(response) {console.log(response)}
+            function publish_callback(response) {if (response && response.success) alert('Published successfully')}
+            function send_callback(response) {if (response && response.success) alert('Sent successfully')}
+        </r:script>
+        <facebook:addToPageLink callback="addToPage_callback" elementClass="btn">Add to page</facebook:addToPageLink>
+        <facebook:inviteLink callback="invite_callback" elementClass="btn" message="Check this app!">Invite</facebook:inviteLink>
+        <facebook:publishLink callback="publish_callback" elementClass="btn">Publish</facebook:publishLink>
+        <facebook:sendLink callback="send_callback" elementClass="btn" link="http://www.google.com" to="594317994">Send a link to a friend</facebook:sendLink>
     </div>
 </div>
