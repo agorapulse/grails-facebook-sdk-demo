@@ -70,12 +70,29 @@ environments {
 // log4j configuration
 log4j = {
     appenders {
-      console name: "stdout",
-              layout: pattern(conversionPattern: "%d{ISO8601} %p %c{1} - %m%n")
+        console name: 'stdout', layout: pattern(conversionPattern: "%d{ISO8601} %p %c{1} - %m%n") //, threshold: org.apache.log4j.Level.INFO
         environments {
             development {
-              debug   'grails.plugins.facebooksdk'
-              debug   'grails.app.controllers', 'grails.app.domain', 'grails.app.services'
+                rollingFile name: 'stacktrace', file: "target/stacktrace.log"
+            }
+        }
+    }
+
+    environments {
+        development {
+            root {
+                error 'stdout' // Default loggers with ERROR level to console (by default, it logs ERROR level and above)
+            }
+            // Loggers with DEBUG level
+            debug   'grails.app.conf',
+                    'grails.app.controllers',
+                    'grails.app.filters',
+                    'grails.app.services',
+                    'grails.plugin.facebooksdk'
+        }
+        production {
+            root {
+                error 'logFile' // Default loggers with ERROR level to rolling file (by default, it logs ERROR level and above)
             }
         }
     }
@@ -117,12 +134,12 @@ grails.plugin.facebooksdk = {
             secret: ''
     ]
     // For multiple app config
-    appIdParamName = 'app_id'
+    /*appIdParamName = 'app_id'
     apps = [
             [
                 id: 0,
                 permissions: 'email',
                 secret: ''
             ],
-    ]
+    ]*/
 }
