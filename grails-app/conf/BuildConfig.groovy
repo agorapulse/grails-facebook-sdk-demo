@@ -24,7 +24,7 @@ grails.project.dependency.resolution = {
         runtime ':resources:1.1.6'
         runtime ':fbootstrapp:0.1.1'
 
-        runtime ':facebook-sdk:0.4.11'
+        runtime ':facebook-sdk:0.4.12'
     }
 }
 
