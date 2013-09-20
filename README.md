@@ -1,14 +1,14 @@
 Grails Facebook SDK - Demo
 ==========================
 
-Demo app for [Grails Facebook SDK plugin](https://github.com/benorama/grails-facebook-sdk).
+Demo app for [Grails Facebook SDK plugin](https://github.com/agorapulse/grails-facebook-sdk).
 
 ## Getting started
 
-**1- Download or clone the [plugin GitHub project](https://github.com/benorama/grails-facebook-sdk-demo).**
+**1- Download or clone the [plugin GitHub project](https://github.com/agorapulse/grails-facebook-sdk-demo).**
 
 ```groovy
-git clone https://benorama@github.com/benorama/grails-facebook-sdk-demo.git
+git clone https://agorapulse@github.com/agorapulse/grails-facebook-sdk-demo.git
 ```
 
 **2- Create a Facebook app on [Facebook Developers](https://developers.facebook.com/apps), in order to get your own app ID and app secret.**
@@ -24,9 +24,9 @@ Configure your Facebook app as below:
 **3- Add your Facebook app parameters to _grails-app/conf/Config.groovy_.**
 
 ```groovy
-grails.plugin.facebooksdk.appId = {APP_ID}
-grails.plugin.facebooksdk.appPermissions = {APP_PERMISSIONS}
-grails.plugin.facebooksdk.appSecret = {APP_SECRET}
+grails.plugin.facebooksdk.appId = {YOUR_APP_ID}
+grails.plugin.facebooksdk.appPermissions = {YOUR_APP_PERMISSIONS}
+grails.plugin.facebooksdk.appSecret = {YOUR_APP_SECRET}
 ```
 
 **4-Run the app from the project root.** 
