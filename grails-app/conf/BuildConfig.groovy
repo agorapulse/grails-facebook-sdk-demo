@@ -18,10 +18,10 @@ grails.project.dependency.resolution = {
     dependencies {
     }
     plugins {
-        build ":tomcat:$grailsVersion"
+        build ':tomcat:7.0.42'
 
         runtime ':jquery:1.8.0'
-        runtime ':resources:1.1.6'
+        runtime ':resources:1.2.1'
         runtime ':fbootstrapp:0.1.1'
 
         runtime ':facebook-sdk:0.4.12'
