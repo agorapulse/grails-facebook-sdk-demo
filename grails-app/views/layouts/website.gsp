@@ -3,9 +3,9 @@
 <head>
 	<title><g:layoutTitle default="Facebook Grails SDK Website Example" /></title>
 	<g:layoutHead />
-	<r:require module="website"/>
-	<r:layoutResources />
-	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <asset:javascript src="application.js"/>
+    <asset:stylesheet href="website.css"/>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 	<!--[if lt IE 9]>
 	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -26,6 +26,5 @@
 		</div>
 		<g:render template="/website/footer" />
 	</div>
-	<r:layoutResources />
 </body>
 </html>

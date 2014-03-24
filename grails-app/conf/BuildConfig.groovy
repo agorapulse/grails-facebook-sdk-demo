@@ -1,11 +1,7 @@
-grails.servlet.version = "2.5" // Change depending on target container compliance (2.5 or 3.0)
-grails.project.class.dir = "target/classes"
-grails.project.test.class.dir = "target/test-classes"
-grails.project.test.reports.dir = "target/test-reports"
-grails.project.target.level = 1.6
+grails.project.class.dir = 'target'
 grails.project.source.level = 1.6
-//grails.project.war.file = "target/${appName}-${appVersion}.war"
 
+grails.project.dependency.resolver = 'maven'
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
     inherits 'global'
@@ -13,18 +9,20 @@ grails.project.dependency.resolution = {
     checksums true // Whether to verify checksums on resolve
     repositories {
         inherits true // Whether to inherit repository definitions from plugins
-        grailsPlugins()
+        mavenLocal()
+        grailsCentral()
+        mavenCentral()
     }
     dependencies {
     }
     plugins {
         build ':tomcat:7.0.52.1'
 
-        runtime ':jquery:1.8.0'
-        runtime ':resources:1.2.1'
-        runtime ':fbootstrapp:0.1.1'
-
-        runtime ':facebook-sdk:0.5.0'
+        compile ':asset-pipeline:1.7.1'
+        runtime(':fbootstrapp:0.1.1'){
+            excludes 'resources'
+        }
+        runtime ':facebook-sdk:0.6.0-SNAPSHOT'
     }
 }
 //grails.plugin.location.facebookSdk = "../grails-facebook-sdk"

@@ -45,12 +45,12 @@
 		</p>
         <p>&nbsp;</p>
         <h2 class="tab">Facebook Dialogs</h2>
-        <r:script>
+        <script type="text/javascript">
             function addToPage_callback(response) {alert(response && response.tabs_added.length + ' app added')}
             function invite_callback(response) {console.log(response)}
             function publish_callback(response) {if (response && response.success) alert('Published successfully')}
             function send_callback(response) {if (response && response.success) alert('Sent successfully')}
-        </r:script>
+        </script>
         <facebook:addToPageLink callback="addToPage_callback" elementClass="btn">Add to page</facebook:addToPageLink>
         <facebook:inviteLink callback="invite_callback" elementClass="btn" message="Check this app!">Invite</facebook:inviteLink>
         <facebook:publishLink callback="publish_callback" elementClass="btn">Publish</facebook:publishLink>

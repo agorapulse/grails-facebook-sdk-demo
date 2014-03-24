@@ -110,18 +110,6 @@ log4j = {
            'net.sf.ehcache.hibernate'
 }
 
-// Resources configuration
-grails.resources.modules = {
-  app {
-    dependsOn 'fbootstrapp'
-    resource url:'/css/app.css'
-  }
-  website {
-    dependsOn 'fbootstrapp'
-    resource url:'/css/website.css'
-  }
-}
-
 // FBootstrapp plugin configuration
 grails.plugins.fboostrapp.fixtaglib = true
 

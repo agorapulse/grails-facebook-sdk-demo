@@ -1,3 +1,8 @@
+/*
+*= require bootstrap
+*= encoding UTF-8
+*/
+
 /* Override some defaults */
 html, body {
 	background-color: #eee;
