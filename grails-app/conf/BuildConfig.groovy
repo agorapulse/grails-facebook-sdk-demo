@@ -22,7 +22,7 @@ grails.project.dependency.resolution = {
         runtime(':fbootstrapp:0.1.1'){
             excludes 'resources'
         }
-        runtime ':facebook-sdk:0.6.0-SNAPSHOT'
+        runtime ':facebook-sdk:0.6.1'
     }
 }
 //grails.plugin.location.facebookSdk = "../grails-facebook-sdk"
