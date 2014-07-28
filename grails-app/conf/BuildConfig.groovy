@@ -16,13 +16,13 @@ grails.project.dependency.resolution = {
     dependencies {
     }
     plugins {
-        build ':tomcat:7.0.52.1'
+        build ':tomcat:7.0.54'
 
-        compile ':asset-pipeline:1.7.1'
+        compile ':asset-pipeline:1.9.4'
         runtime(':fbootstrapp:0.1.1'){
             excludes 'resources'
         }
-        runtime ':facebook-sdk:0.6.2'
+        runtime ':facebook-sdk:2.0.0'
     }
 }
 //grails.plugin.location.facebookSdk = "../grails-facebook-sdk"

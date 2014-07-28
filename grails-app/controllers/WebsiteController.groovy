@@ -16,29 +16,30 @@ class WebsiteController {
     }
 
 	def index() {
-		FacebookGraphClient facebookGraphClient = new FacebookGraphClient()
 		def user
+        List permissions = []
 		List userFriends = []
         if (facebookContext.app.id && facebookContext.authenticated) {
             String token = facebookContext.user.token
             if (token) {
-                facebookGraphClient = new FacebookGraphClient(token)
+                FacebookGraphClient facebookGraphClient = new FacebookGraphClient(token)
                 try {
                     user = facebookGraphClient.fetchObject(facebookContext.user.id.toString())
-                    userFriends = facebookGraphClient.fetchConnection("${facebookContext.user.id}/friends", [limit:10])
+                    permissions = facebookGraphClient.fetchConnection("${facebookContext.user.id}/permissions")
+                    if (permissions.find { it.permission == 'user_friends' && it.permission == 'granted' } ) {
+                        userFriends = facebookGraphClient.fetchConnection("${facebookContext.user.id}/friends", [limit:10])
+                    }
                 } catch (FacebookOAuthException exception) {
-                    facebookGraphClient = new FacebookGraphClient() // Do not use invalid token anymore
                     facebookContext.user.invalidate()
                 }
             }
         }
 		
 		// This call will always work since we are fetching public data.
-		def benorama = facebookGraphClient.fetchObject('benorama')
-        [
+		[
                 facebookContext: facebookContext,
-                benorama: benorama,
-				user: user,
+                permissions: permissions,
+        		user: user,
 				userFriends: userFriends
         ]
 	}

@@ -17,7 +17,7 @@
 			
 			<h2 class="tab">Authentication</h2>
 			<g:if test="${facebookContext.authenticated}">
-				<ul class="authentication">
+                <ul class="authentication">
                     <li>
                         <facebook:logoutLink elementClass="btn pull-right" nextUrl="${createLink(action:'logout')}">Logout</facebook:logoutLink>
                         Log out via Facebook JavaScript SDK:
@@ -29,6 +29,14 @@
                         Log out Facebook.com server side redirect:
                     </li>
                 </ul>
+                <h2 class="tab">Permissions</h2>
+                <ul class="permissions">
+                    <g:each in="${permissions}" var="permission">
+                        <li>
+                            ${permission.permission} (${permission.status})
+                        </li>
+                    </g:each>
+                </ul>
 			</g:if>
 			<g:else>
 				<ul class="authentication">
@@ -38,7 +46,7 @@
                         (<i>client-side, with Facebook Grails SDK handling authorization code from cookie on reload</i>)
                     </li>
                     <li>
-                        <a href="${facebookContext.loginURL}" class="pull-right large btn">Login</a>
+                        <a href="${facebookContext.getLoginURL(redirect_uri: 'http://localhost:8080/facebook-sdk-demo/website/index?pageAppId=4')}" class="pull-right large btn">Login</a>
                         Log in via Facebook.com server side redirect:<br />
                         (<i>server-side, with Facebook Grails SDK handling authorization code from url on return</i>)
                     </li>
@@ -64,25 +72,21 @@
 			</g:else>
 			<p>&nbsp;</p>
 		</g:else>
-		<h2 class="tab">Public data</h2>
-		<h3>Profile pic + name</h3>
-		<p>
-            <facebook:picture facebookId="benorama" linkEnabled="true" />
-			${benorama?.name}
-		</p>
-        <p>&nbsp;</p>
+		<p>&nbsp;</p>
         <h2 class="tab">Facebook Dialogs</h2>
         <script type="text/javascript">
-            function addToPage_callback(response) {alert(response && response.tabs_added.length + ' app added')}
-            function invite_callback(response) {console.log(response)}
-            function publish_callback(response) {if (response && response.success) alert('Published successfully')}
-            function send_callback(response) {if (response && response.success) alert('Sent successfully')}
+            function addToPage_callback(response) {alert(response && response.tabs_added.length + ' app added')};
+            function invite_callback(response) {console.log(response)};
+            function publish_callback(response) {if (response && response.success) alert('Published successfully')};
+            function send_callback(response) {if (response && response.success) alert('Sent successfully')};
+            function share_callback(response) {if (response && response.success) alert('Shared successfully')};
         </script>
         <facebook:addToPageLink callback="addToPage_callback" elementClass="btn">Add to page</facebook:addToPageLink>
         <facebook:inviteLink callback="invite_callback" elementClass="btn" message="Check this app!">Invite</facebook:inviteLink>
-        <facebook:publishLink callback="publish_callback" elementClass="btn">Publish</facebook:publishLink>
+        <facebook:publishLink callback="publish_callback" elementClass="btn">Publish (legacy)</facebook:publishLink>
+        <facebook:shareLink callback="share_callback" elementClass="btn" href="http://www.google.com">Publish (new)</facebook:shareLink>
         <facebook:sendLink callback="send_callback" elementClass="btn" link="http://www.google.com" to="594317994">Send a link to a friend</facebook:sendLink>
-	</div>
+    </div>
 	<div class="span4">
 		<g:render template="links" />
 	</div>

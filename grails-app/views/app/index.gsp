@@ -22,6 +22,14 @@
 				</p>
 			</g:if>
 			<g:else>
+                <h2 class="tab">Permissions</h2>
+                <ul class="permissions">
+                    <g:each in="${permissions}" var="permission">
+                        <li>
+                            ${permission.permission} (${permission.status})
+                        </li>
+                    </g:each>
+                </ul>
 				<h2 class="tab">Your data</h2>
 				<h3>Your profile pic + name</h3>
 				<p>
@@ -37,23 +45,19 @@
 			</g:else>
 			<p>&nbsp;</p>
 		</g:else>
-		<h2 class="tab">Public data</h2>
-		<h3>Profile pic + name</h3>
-		<p>
-			<img src="https://graph.facebook.com/benorama/picture">
-			${benorama?.name}
-		</p>
-        <p>&nbsp;</p>
+		<p>&nbsp;</p>
         <h2 class="tab">Facebook Dialogs</h2>
         <script type="text/javascript">
-            function addToPage_callback(response) {alert(response && response.tabs_added.length + ' app added')}
-            function invite_callback(response) {console.log(response)}
-            function publish_callback(response) {if (response && response.success) alert('Published successfully')}
-            function send_callback(response) {if (response && response.success) alert('Sent successfully')}
+            function addToPage_callback(response) {alert(response && response.tabs_added.length + ' app added')};
+            function invite_callback(response) {console.log(response)};
+            function publish_callback(response) {if (response && response.success) alert('Published successfully')};
+            function send_callback(response) {if (response && response.success) alert('Sent successfully')};
+            function share_callback(response) {if (response && response.success) alert('Shared successfully')};
         </script>
         <facebook:addToPageLink callback="addToPage_callback" elementClass="btn">Add to page</facebook:addToPageLink>
         <facebook:inviteLink callback="invite_callback" elementClass="btn" message="Check this app!">Invite</facebook:inviteLink>
-        <facebook:publishLink callback="publish_callback" elementClass="btn">Publish</facebook:publishLink>
+        <facebook:publishLink callback="publish_callback" elementClass="btn">Publish (legacy)</facebook:publishLink>
+        <facebook:shareLink callback="share_callback" elementClass="btn" href="http://www.google.com">Publish (new)</facebook:shareLink>
         <facebook:sendLink callback="send_callback" elementClass="btn" link="http://www.google.com" to="594317994">Send a link to a friend</facebook:sendLink>
     </div>
 </div>
