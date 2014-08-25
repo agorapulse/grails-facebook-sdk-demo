@@ -114,22 +114,26 @@ log4j = {
 grails.plugins.fboostrapp.fixtaglib = true
 
 // Facebook sdk plugin
-grails.plugin.facebooksdk = {
-    // For single app config
-    app = [
-            id: 0,
-            permissions: ['email'],
-            secret: ''
-    ]
-    // For multiple app config
-    /*appIdParamName = 'app_id'
-    apps = [
-            [
-                id: 0,
-                permissions: 'email',
-                secret: ''
-            ],
-    ]*/
+grails {
+    plugin {
+        facebooksdk {
+            // For single app config
+            app = [
+                    id: 0,
+                    permissions: ['email'],
+                    secret: ''
+            ]
+            // For multiple app config
+            /*appIdParamName = 'app_id'
+            apps = [
+                    [
+                        id: 0,
+                        permissions: 'email',
+                        secret: ''
+                    ],
+            ]*/
+        }
+    }
 }
 // Uncomment and edit the following lines to start using Grails encoding & escaping improvements
 
