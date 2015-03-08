@@ -1,7 +1,9 @@
+# GRADLE files
+.gradle/
+build/
+
 # GRAILS files
-/web-app/WEB-INF
-/target
-/target-eclipse
+grails-app/assets/dependencies
 
 # IDE files
 .classpath

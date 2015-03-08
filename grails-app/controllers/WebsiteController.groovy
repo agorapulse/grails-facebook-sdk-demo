@@ -1,6 +1,6 @@
 import com.restfb.exception.FacebookOAuthException
-import grails.plugin.facebooksdk.FacebookContext
-import grails.plugin.facebooksdk.FacebookGraphClient
+import agorapulse.plugins.facebooksdk.FacebookContext
+import agorapulse.plugins.facebooksdk.FacebookGraphClient
 
 class WebsiteController {
 
@@ -48,7 +48,5 @@ class WebsiteController {
         facebookContext.user.invalidate()
 		redirect action: 'index'
 	}
-
-	def welcome() {}
 
 }

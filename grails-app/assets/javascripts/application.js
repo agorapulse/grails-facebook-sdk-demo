@@ -1,1 +1,5 @@
-//= require jquery/jquery-1.11.0.min.js
+//= require libs/jquery/dist/jquery
+
+$(function() {
+	// Your JS
+});

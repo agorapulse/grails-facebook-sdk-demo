@@ -24,9 +24,9 @@ Configure your Facebook app as below:
 **3- Add your Facebook app parameters to _grails-app/conf/Config.groovy_.**
 
 ```groovy
-grails.plugin.facebooksdk.appId = {YOUR_APP_ID}
-grails.plugin.facebooksdk.appPermissions = {YOUR_APP_PERMISSIONS}
-grails.plugin.facebooksdk.appSecret = {YOUR_APP_SECRET}
+agorapulse.plugins.facebooksdk.appId = {YOUR_APP_ID}
+agorapulse.plugins.facebooksdk.appPermissions = {YOUR_APP_PERMISSIONS}
+agorapulse.plugins.facebooksdk.appSecret = {YOUR_APP_SECRET}
 ```
 
 **4-Run the app from the project root.** 
