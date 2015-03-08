@@ -61,10 +61,11 @@ dependencies {
   compile "org.grails.plugins:cache"
   compile "org.hibernate:hibernate-ehcache"
 
+    // Facebook SDK plugin
+    compile "agorapulse.plugins:facebook-sdk:0.1.M2"
+
   runtime "org.grails.plugins:asset-pipeline"
   runtime "org.grails.plugins:scaffolding"
-  compile "agorapulse.plugins:facebook-sdk:0.1.M2"
-  //  compile project(":plugin")
 
   testCompile "org.grails:grails-plugin-testing"
   testCompile "org.grails.plugins:geb"

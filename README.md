@@ -17,25 +17,29 @@ Configure your Facebook app as below:
 
 * *App name space* = my-app-name-space
 * *App domain* = localhost
-* *Website URL* = http://localhost:8080/facebook-sdk-demo/website/
-* *App on Facebook* = http://localhost:8080/facebook-sdk-demo/app/
+* *Website URL* = http://localhost:8080/website/
+* *App on Facebook* = https://localhost:8443/app/
 * *sandbox mode* = enabled (in Advanced setting, to be able to use the app on Facebook without SSL certificate)
 
-**3- Add your Facebook app parameters to _grails-app/conf/Config.groovy_.**
+**3- Add your Facebook app parameters to _grails-app/conf/application.yml_.**
 
-```groovy
-agorapulse.plugins.facebooksdk.appId = {YOUR_APP_ID}
-agorapulse.plugins.facebooksdk.appPermissions = {YOUR_APP_PERMISSIONS}
-agorapulse.plugins.facebooksdk.appSecret = {YOUR_APP_SECRET}
+```yml
+agorapulse:
+    plugins:
+        facebooksdk:
+            app:
+                id: {APP_ID}
+                permissions: {APP_PERMISSIONS} // Ex. ['email','user_photos']
+                secret: {APP_SECRET}
 ```
 
 **4-Run the app from the project root.** 
 
 ```groovy
-grails run-app
+grails run-app -https
 ```
 
 Browse to :
 
-* <http://localhost:8080/facebook-sdk-demo/website/> for the website example
+* <http://localhost:8080/website/> for the website example
 * <http://apps.facebook.com/my-app-name-space> for the app example on Facebook
