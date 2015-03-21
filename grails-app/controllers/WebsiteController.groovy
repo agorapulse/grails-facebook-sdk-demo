@@ -1,6 +1,6 @@
 import com.restfb.exception.FacebookOAuthException
-import agorapulse.plugins.facebooksdk.FacebookContext
-import agorapulse.plugins.facebooksdk.FacebookGraphClient
+import grails.plugin.facebooksdk.FacebookContext
+import grails.plugin.facebooksdk.FacebookGraphClient
 
 class WebsiteController {
 

@@ -1,4 +1,3 @@
-<meta name="layout" content="website"/><%-- Temp workaround for Grails 3.0.0.M2 --%>
 <div class="page-header">
 	<h1>
         Website example

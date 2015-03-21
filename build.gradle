@@ -17,7 +17,7 @@ plugins {
 }
 
 version "0.1"
-group "agorapulse.plugins"
+group "org.grails.plugins"
 
 apply plugin: "spring-boot"
 apply plugin: "war"
@@ -74,7 +74,7 @@ dependencies {
     console "org.grails:grails-console"
 
     // Facebook SDK plugin
-    compile "agorapulse.plugins:facebook-sdk:0.1.RC1"
+    compile "org.grails.plugins:facebook-sdk:3.0.0.RC2"
 }
 
 task wrapper(type: Wrapper) {
