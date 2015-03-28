@@ -74,7 +74,7 @@ dependencies {
     console "org.grails:grails-console"
 
     // Facebook SDK plugin
-    compile "org.grails.plugins:facebook-sdk:3.0.0.RC2"
+    compile "org.grails.plugins:facebook-sdk:3.0.0.RC3"
 }
 
 task wrapper(type: Wrapper) {
