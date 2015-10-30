@@ -1,3 +1,5 @@
+/prodDb.lock.db
+/.asscache
 # GRADLE files
 .gradle/
 build/

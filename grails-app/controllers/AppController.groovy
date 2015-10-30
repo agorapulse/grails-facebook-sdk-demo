@@ -5,6 +5,7 @@ import com.restfb.exception.FacebookOAuthException
 class AppController {
 
     static defaultAction = 'index'
+    static transactional = false
 
     FacebookContext facebookContext
 
