@@ -3,6 +3,9 @@ grails:
   profile: web
   codegen:
     defaultPackage: agorapulse.demo.facebooksdk
+  spring:
+    transactionManagement:
+        proxies: false
 info:
     app:
         name: '@info.app.name@'
@@ -12,6 +15,11 @@ spring:
   groovy:
     template:
       check-template-location: false
+# Spring Actuator Endpoints are Disabled by Default
+endpoints:
+    enabled: false
+    jmx:
+        enabled: true
 
 ---
 grails:

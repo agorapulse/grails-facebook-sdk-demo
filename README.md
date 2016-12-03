@@ -24,8 +24,8 @@ Configure your Facebook app as below:
 **3- Add your Facebook app parameters to _grails-app/conf/application.yml_.**
 
 ```yml
-agorapulse:
-    plugins:
+grails:
+    plugin:
         facebooksdk:
             app:
                 id: {APP_ID}

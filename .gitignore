@@ -1,26 +1,12 @@
-/prodDb.lock.db
-/.asscache
-# GRADLE files
-.gradle/
+Thumbs.db
+.DS_Store
+.gradle
 build/
-
-# GRAILS files
-grails-app/assets/dependencies
-
-# IDE files
-.classpath
-.idea/
+.idea
+*.iml
+*.ipr
+*.iws
 .project
 .settings
-/*.launch
-/*.tmproj
-
-*.log
-*.zip
-*.iml
-/out
-plugin.xml
-
-# test conf
-grails-app/conf/application.groovy
-application-DEVELOPMENT.yml
+.classpath
+application-development.yml
