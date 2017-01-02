@@ -49,6 +49,4 @@ class WebsiteController {
 		redirect action: 'index'
 	}
 
-	def welcome() {}
-
 }

@@ -4,27 +4,20 @@
 	<title><g:layoutTitle default="Facebook Grails SDK Website Example" /></title>
 	<g:layoutHead />
     <asset:javascript src="application.js"/>
-    <asset:stylesheet href="website.css"/>
+    <asset:stylesheet href="application.css"/>
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 	<!--[if lt IE 9]>
 	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-  </head>
+</head>
 
-<body>
-	<div class="topbar">
-		<div class="fill">
-			<div class="container">
-				<a class="brand" href="#">Facebook Grails SDK</a>
-			</div>
-		</div>
-	</div>
+<body class="web-layout">
+	<g:render template="/navbar"/>
 
 	<div class="container">
-		<div class="content">
-			<g:layoutBody />
-		</div>
-		<g:render template="/website/footer" />
+		<g:layoutBody />
+		<hr/>
+		<g:render template="/footer" />
 	</div>
 </body>
 </html>

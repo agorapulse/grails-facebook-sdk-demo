@@ -1,18 +1,12 @@
-# GRAILS files
-/web-app/WEB-INF
-/target
-/target-eclipse
-
-# IDE files
-.classpath
-.idea/
+Thumbs.db
+.DS_Store
+.gradle
+build/
+.idea
+*.iml
+*.ipr
+*.iws
 .project
 .settings
-/*.launch
-/*.tmproj
-
-*.log
-*.zip
-*.iml
-/out
-plugin.xml
+.classpath
+application-development.yml
